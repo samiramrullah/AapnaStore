@@ -1,11 +1,15 @@
 import React from 'react';
 import Index from './pages/Index';
-
-
-const App=()=> {
+import { Routes, Route } from 'react-router-dom'
+import Product from './pages/Product';
+const App = () => {
   return (
     <div className="">
-      <Index/>
+      <Routes>
+        <Route path='/' element={<Index />} />
+        <Route path='/product' element={<Product />} />
+      </Routes>
+      
     </div>
   );
 }

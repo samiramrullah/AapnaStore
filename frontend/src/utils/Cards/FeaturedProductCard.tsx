@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FeaturedProduct = () => {
+const FeaturedProductCard = () => {
     return (
         <div className="group relative">
             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
@@ -22,4 +22,4 @@ const FeaturedProduct = () => {
     )
 }
 
-export default FeaturedProduct
+export default FeaturedProductCard
