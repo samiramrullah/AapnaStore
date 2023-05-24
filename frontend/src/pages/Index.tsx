@@ -1,11 +1,12 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import FeatureProduct from '../components/Products/FeatureProduct'
+import Wrapper from '../components/Wrapper'
 
 const Index = () => {
     return (
         <>
-            <Navbar/>
+            <Navbar />
             <div className="relative py-12 bg-white sm:py-16 lg:py-20">
                 <div className="absolute inset-0">
                     <img className="object-cover object-right w-full h-full lg:object-center" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/hero/5/background.png" alt="" />
@@ -74,7 +75,7 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-            <FeatureProduct/>
+            <FeatureProduct />
         </>
     )
 }
