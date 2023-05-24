@@ -54,7 +54,7 @@ export function fetchProducts() {
   return async function fetchProductsThunk(dispatch: ThunkDispatch<RootState, undefined, AnyAction>, getState: () => RootState) {
     dispatch(setProductFetchStatus(STATUS.loading));
     try {
-      const response = await axios.get<ProductInterface[]>("https://fakestoreapi.com/products");
+      const response = await axios.get<ProductInterface[]>("https://fakestoreapi.com/productsaa");
       dispatch(setProducts(response.data));
       dispatch(setProductFetchStatus(STATUS.ideal));
     } catch (error) {
