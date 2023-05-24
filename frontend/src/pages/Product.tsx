@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Wrapper from "../components/Wrapper";
 import ProductCard from "../utils/Cards/ProductCard";
+import { useDispatch, useSelector } from 'react-redux';
+import { ProductInterface, fetchProducts } from "../redux/ProductSlice";
+import { AppDispatch } from "../redux/store";
+import { RootState } from "../redux/store";
 
 const Product = () => {
+    const dispatch: AppDispatch = useDispatch();
+    const products = useSelector((state: RootState) => state.product.products)
+    useEffect(() => {
+        dispatch(fetchProducts())
+    }, [dispatch])
+
+   
+    
     return (
         <Wrapper>
 
@@ -27,20 +39,20 @@ const Product = () => {
                     </div>
 
                     <div className=" grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
+                       {products?.map((itm:ProductInterface)=>(
+                       
+                        <ProductCard title={itm.title} id={itm.id} description={itm.description} category={itm.category} image={itm.image} rating={itm.rating} price={itm.price}/>
+                       
+                       ))}
                         
-                         
                         
-                        
-                        
-                        
-                       <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
+                        {/* <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard /> */}
                     </div>
 
                     <div className=" flex justify-center items-center">
