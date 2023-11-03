@@ -10,7 +10,8 @@ require('dotenv').config();
 const cors=require('./cors')
 const error=require('./error')
 //import Routes
-const userRoute=require('./api/Routes/UserManagement/user');
+const userAuth=require('./api/Routes/UserManagement/auth');
+const userRoute=require('./api/Routes/UserManagement/user')
 
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -22,9 +23,11 @@ mongoose.connect(process.env.ConnectionString).then(() => {
 }).catch((err) => console.log("Error in connecting to database"))
 mongoose.Promise = global.Promise;
 
+//cors error handeling
 app.use(cors);
 
-app.use('/api/user',userRoute)
+app.use('/api/auth',userAuth)
+app.use('/api/users',userRoute)
 app.use(error)
 
 module.exports=app;
