@@ -1,46 +1,41 @@
-# Test 2
+# Test 3
 
-<hr>
 
-# Day 1 (21 Oct)
- - Circular Motion
- - Microbes in human Welfare <br>
+# Day 1 (30 Oct)
+ - Fluids
+ - Living World
+ - Biology Classification <br>
   **Practice Questions** 
 
- # Day 2 (22)
- - Rotational Motion (1 to 10)
- - Bio Tech <br>
+ # Day 2 (31)
+ - KTG
+ - Plant Kingdom 
+ - Animal Kingdom <br>
  **Practice Questions** 
 
- # Day 3 (23)
- - Rotational Motion (11 to 17) <br>
+ # Day 3 (Nov 1)
+ - Thermal Properties
+ - Evolution <br>
  **Practice Questions**  <br>
- ***One Test Module Only Chemistry portion***
+ ***One Test Module***
  
- # Day 4 (24)
- - Chemical Kinetics <br>
+ # Day 4 (2)
+ - Thermodynamics <br>
  **Practice Questions**
  ***One Test Module strictly with time ***
 
- # Day 5 (25)
- - Solution (1 to 6)
- **Practice Questions**
- # Day 6 (26)
- - Solution  (6 to 10)
+ # Day 5 (3)
+ - ElectroChemistry 
+ - Perodic Table
+ **Practice Questions** <br>  <br>
+ # Day 6 (4)
+ - Frog
+ - Cockroach
   **Practice Questions**  <br>
- ***One Test Module Only Chemistry portion***
+ ***2 Test Module Only bio portion***
 
-# Day 7 (27)
- - Molecular basis of inheritance
- - Bio Tech and Application
-   **Practice Questions**  <br>
-    **Solve at least 2 test paper keeping time in mind**
+# Day 6 (5)
+- try to solve at least 2 module before you leave <br> <br>
 
-# Day 8 (28)
-- principle of inheritance <br>
-***Revise your weak portions*** <br>
- **Solve at least 3 test paper keeping time in mind** if you can try 5.
-
-# Day 9 (29)
-- Early in morning revise all notes 
-- Solve a test module 
+# Notes:
+1. If You can't complete day 1 try in day 2

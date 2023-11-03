@@ -1,63 +1,30 @@
-const expess=require('express');
-const morgan=require('morgan');
+const express=require('express');
 const bodyParser=require('body-parser');
+const morgan=require('morgan')
 const mongoose=require('mongoose')
 
-const app=expess();
+const app=express();
 require('dotenv').config();
 
-//Routes
-const userRoute=require('./api/user');
+//middleware
+const cors=require('./cors')
+const error=require('./error')
+//import Routes
+const userRoute=require('./api/Routes/UserManagement/user');
 
-app.use(morgan('dev'));
-
-//db connection
-
-mongoose.connect(process.env.ConnectionString).then(()=>{
-    console.log('Connected to database');
-}).catch((err)=>console.log(err))
-mongoose.Promise=global.Promise;
-
-
-//Handeling cors error
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*')  //wildcard
-    res.header('Access-Control-Allow-Headers', '*');
-    if (req.method === 'OPTIONS') {
-        res.header('Access-Control-Methods', 'POST', 'GET', 'PATCH', 'DELETE')
-        return res.status(200).json({});
-    }
-    next();
-})
-
-
-//bodyparser
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(morgan('dev'))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+//db connection
+mongoose.connect(process.env.ConnectionString).then(() => {
+    console.log('Connected to Database');
+}).catch((err) => console.log("Error in connecting to database"))
+mongoose.Promise = global.Promise;
 
-//Routes
+app.use(cors);
 
-app.use('/api/user',userRoute);
+app.use('/api/user',userRoute)
+app.use(error)
 
-
-//Error handeling
-//if no paths matched
-
-app.use((req, res, next) => {
-    const error = new Error('No matching paths')
-    error.status = 404;
-    next(error);
-})
-
-// if methods not matched
-
-app.use((error, req, res, next) => {
-    res.status(error.status || 500);
-    res.json({
-        error: {
-            message: error.message
-        }
-    })
-})
+module.exports=app;
